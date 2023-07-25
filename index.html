@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4 Challenge: Coding Project</title>
+    <link rel = "stylesheet" href = "Assets/css/style.css">
+</head>
+<body>
+    <header>
+    <!--View High Scores Button-->
+        <div class = "highScoresButton">
+            <button type = "button">View High Scores</button>
+        </div>
+    </header>
+    <!--Start Button-->
+    <div class = "startButton">
+        <button type = "button" >Start</button>
+    </div>
+    <!--Quiz Rules Box-->
+    <div class = "quizRulesCard">
+        <!--Some Rules for this Quiz-->
+        <div class = "quizRulesHeader">
+            Some Rules for this Quiz
+        </div>
+        <!--Quiz Rules-->
+        <div class = "quizRules">
+            1. You will have a total of 100 seconds for the quiz. <br>
+            2. Your final score is the time remaining after completing the quiz.
+            3. Once you submit  an answer, you cannot go back to the previous question. <br> 
+            4. Once started, the quiz cannot be exited <br>
+        </div>
+        <!--Two Buttons-->
+        <div class = "quizRulesFooter">
+            <button id = "quizRulesExitButton" type = "button">Exit Quiz</button>
+            <button id = "quizRulesContinueButton" type = "button">Continue</button>
+        </div>
+    </div>
+    <!--Screen during the duration of the quiz-->
+    <div>
+        <!--Quiz Box-->
+        <div class = "quizBoxCard">
+            <!--Quiz Header with Timer-->
+            <div class = "qAndABoxHeader">
+                <div id = "quizTimer">
+                    The Best Coding Quiz Ever
+                </div>
+                <div id = "quizTimer">
+                    Timer: 
+                </div>
+            </div>
+            <div class = "quizBoxQuestion">
+                <p>The Question</p>
+            </div>
+            <div class = "answerOne">
+                <button id = "answerOne" type = "input">Answer 1</button>
+            </div>
+            <div>
+                <button id = "answerTwo" type = "input">Answer 2</button>
+            </div>
+            <div>
+                <button id = "answerThree" type = "input">Answer 3</button>
+            </div>
+            <div>
+                <button id = "answerFour" type = "input">Answer 4</button>
+            </div>
+            <div class = "quizBoxFooter">
+                <button id = "quizBoxNextQuestion" type = "button"> Next Question </button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

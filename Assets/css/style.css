@@ -1,0 +1,230 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #D8BFD8;
+}
+
+.highScoresButton button{
+    padding: 5px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    box-shadow: 0px 0px 0px 1.5px;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+}
+
+.highScoresButton button:hover {
+    box-shadow: 0px 3px 3px black; 
+    background-color: #FF7F50;
+    opacity: 0.6;
+}
+
+
+.startButton button {
+    visibility: visible;
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F88158;
+    border-radius: 3px;
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 0px 0px 2px;
+    transition: all 300ms ease-in-out;
+
+}
+
+.startButton button:hover {
+    box-shadow: 0px 3px 3px black; 
+    cursor: pointer;
+}
+
+.quizRulesCard{
+    visibility: hidden;
+    position: absolute;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF5EE;
+    box-shadow: 0px 0px 0px 2px;
+    transition: all 300ms ease-in-out;
+}
+.quizRulesCard:hover {
+    box-shadow: 0px 3px 3px black; 
+}
+
+.quizRulesHeader {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    height: 50px;
+    font-size: 30px;
+    border-bottom: 2px solid black;
+}
+
+.quizRules {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    line-height: 25px;
+    margin-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 30px;
+}
+
+.quizRulesFooter {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 2px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#quizRulesExitButton {
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#quizRulesContinueButton {
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#quizRulesExitButton:hover {
+    background-color: #C60C30;
+    opacity: 0.6;
+}
+
+#quizRulesContinueButton:hover {
+    background-color: #6CB4EE;
+    opacity: 0.6;
+}
+
+.quizBoxCard {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    background-color: #FFF5EE;
+    box-shadow: 0px 0px 0px 3px;
+    transition: all 300ms ease-in-out;
+}
+
+.quizBoxCard:hover {
+    box-shadow: 2.5px 5.5px 0px 0px, -2.5px 5.5px 0px 0px;
+}
+
+.qAndABoxHeader {
+    font-size: 35px;
+    border-bottom: 2px solid black;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#quizTimer {
+    padding-right: 100px;
+}
+
+.quizBoxQuestion {
+    font-size: 23px;
+    margin: 15px;
+    padding-left: 9px;
+    margin-bottom: 20px;
+}
+
+#answerOne {
+    text-align: left;
+    padding-left: 10px;
+    width: 85%;
+    margin-left: 19px;
+    height: 30px;
+    background-color:  #F8F8FF;
+}
+
+#answerOne:hover {
+    background-color: #F88158;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#answerTwo {
+    text-align: left;
+    padding-left: 10px;
+    width: 85%;
+    margin-left: 19px;
+    margin-top: 20px;
+    height: 30px;
+    background-color:  #F8F8FF;
+}
+
+#answerTwo:hover {
+    background-color: #F88158;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#answerThree {
+    text-align: left;
+    padding-left: 10px;
+    width: 85%;
+    margin-left: 19px;
+    margin-top: 20px;
+    height: 30px;
+    background-color:  #F8F8FF;
+}
+
+#answerThree:hover {
+    background-color: #F88158;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#answerFour {
+    text-align: left;
+    padding-left: 10px;
+    width: 85%;
+    margin-left: 19px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 30px;
+    background-color:  #F8F8FF;
+}
+
+#answerFour:hover {
+    background-color: #F88158;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.quizBoxFooter {
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+#quizBoxNextQuestion {
+    font-size: 23px;
+    display: none;
+}
+
+#quizBoxNextQuestion:hover{
+    background-color: #6CB4EE;
+    opacity: 0.6;
+}

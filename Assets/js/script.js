@@ -4,19 +4,24 @@ var highScoresPage = document.querySelector("#highScoresPage")
 var quizRulesCard = document.querySelector(".quizRulesCard");
 var startButton = document.querySelector(".startButton button");
 var nextButton = document.querySelector("#quizBoxNextQuestion");
+
 var answerOne = document.getElementById("answerOne");
 var answerTwo = document.getElementById("answerTwo");
 var answerThree = document.getElementById("answerThree");
 var answerFour = document.getElementById("answerFour");
-var quizBoxCard = document.querySelector(".quizBoxCard");
-var quizTimer = document.querySelector("#quizTimer");
+var highScoresButton = document.getElementById("highScoresButton");
 var buttonsArray = [answerOne, answerTwo, answerThree, answerFour];
+
+var quizTimer = document.querySelector("#quizTimer");
 var submissionsArray = [];
-var quizQuestion = quizBoxCard.children[1].children[0];
+var quizQuestion = quizBox.children[1].children[0];
 var finalScore = document.querySelector("#finalScore");
 var submissonForm = document.getElementById("submissionForm");
 var unorderedList = document.getElementById("list");
 var userInput = document.getElementById("inputBox");
+
+var clearHighScoresButton = document.getElementById("clearHighScores");
+
 var correctOrNot = false;
 var totalSubmission = 0;
 var questionCount = 0;
@@ -24,6 +29,26 @@ var answerCount = 0;
 var quizScore = 0;
 var totalTime = 300;
 var userInput;
+
+console.log(quizBox.style.visibility);
+
+highScoresButton.addEventListener("click", function (newEvent) {
+    if (quizBox.style.visibility == "") {
+        startButton.style.visibility = "hidden";
+        quizRulesCard.style.visibility = "hidden";
+        highScoresPage.style.visibility = "visible";
+    }
+})
+
+clearHighScoresButton.addEventListener("click", function (thisEvent) {
+    localStorage.removeItem("submissionsArray");
+    //clear list items
+    var liItem = unorderedList.querySelectorAll("li")
+    liItem.forEach(function(li) {
+        unorderedList.removeChild(li);
+    });
+
+})
 
 
 submissonForm.addEventListener("submit", function (newEvent) {
@@ -139,7 +164,7 @@ startButton.addEventListener("click", function(someEvent) {
 
 
 //moves between the quiz questions
-quizBoxCard.addEventListener("click", function answerVerification (thisEvent) {
+quizBox.addEventListener("click", function answerVerification (thisEvent) {
     var clickedEl = thisEvent.target;
     var text = clickedEl.textContent;
     function isCorrect (clickedEl) {

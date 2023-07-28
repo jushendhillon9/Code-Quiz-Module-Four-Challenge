@@ -16,6 +16,7 @@ var quizQuestion = quizBoxCard.children[1].children[0];
 var finalScore = document.querySelector("#finalScore");
 var submissonForm = document.getElementById("submissionForm");
 var unorderedList = document.getElementById("list");
+var userInput = document.getElementById("inputBox");
 var correctOrNot = false;
 var totalSubmission = 0;
 var questionCount = 0;
@@ -27,12 +28,15 @@ var userInput;
 
 submissonForm.addEventListener("submit", function (newEvent) {
     newEvent.preventDefault();
-    totalSubmission++;
-    localStorage.setItem("count", totalSubmission.toString());
-    userInput = document.getElementById("inputBox").value;
+    //without preventDefault here, the page would refresh after the submit button is hit
+    //this is because the data is not kept in local storage, and is instead sent to a server
+    //after the data is sent to a local server, the page immediately refreshes and we are brought to the start button
+    var usersInput = userInput.value;
+
+
     var quizTake = {
         score: totalTime,
-        name: userInput
+        name: usersInput
     };
     var storedArray = localStorage.getItem("submissionsArray");
     //if statement checks if the stored array has any stored data (quiztake objects) present
@@ -40,21 +44,40 @@ submissonForm.addEventListener("submit", function (newEvent) {
     if (storedArray) {
         submissionsArray = JSON.parse(storedArray);
     }
-    //array to overtake stored array takes on new quiztake object
+    //array to overwrite stored array takes on new quiztake object
     submissionsArray.push(quizTake);
     localStorage.setItem("submissionsArray", JSON.stringify(submissionsArray));
     console.log(submissionsArray);
+
+    //clear list items
+    // then implement a for loop that goes through the array and creates li item elements for each array item and then sets
+    // each li text content to that array[i].name with array[i].score
+
+    var liItems = unorderedList.querySelectorAll("li");
+    liItems.forEach(function(li) {
+        //for each list item in the array of all the listitems in the unordered list, which is returned by the query selector,
+        unorderedList.removeChild(li)
+        //remove the list item from the unordered list
+    })
+    
+
+    //sorts the array based on score, it takes the pairs of the array and compares the 
+    // each score using the line of code inside the function and sorts them appropriately
+    submissionsArray.sort(function (a,b) {
+        return a.score - b.score;
+    })
+
+    for (var i = 0; i < submissionsArray.length; i++) {
+        var listItem = document.createElement("li");
+        listItem.textContent = submissionsArray[i].name + " with a total score of: " + submissionsArray[i].score;
+
+        unorderedList.appendChild(listItem);
+    }
+
+
     recordScorePage.style.visibility = "hidden";
     highScoresPage.style.visibility = "visible";
-    var storedNumber = localStorage.getItem("count");
-    var index = parseInt(storedNumber);
-    for (var i = 0; i < 9; i++) {
-        var listItem = document.createElement("li")
-        listItem.textContent = submissionsArray[i].name;
-        unorderedList.innerHTML = "";
-        unorderedList.appendChild(listItem);
-        console.log(unorderedList);
-    }
+    
 });
 
 

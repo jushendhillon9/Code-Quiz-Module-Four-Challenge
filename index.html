@@ -25,7 +25,7 @@
         </div>
         <!--Quiz Rules-->
         <div class = "quizRules">
-            1. You will have a total of 100 seconds for the quiz. <br>
+            1. You will have a total of 300 seconds for the quiz. <br>
             2. Your final score is the time remaining after completing the quiz.
             3. Once you submit  an answer, you cannot go back to the previous question. <br> 
             4. Once started, the quiz cannot be exited <br>
@@ -42,31 +42,53 @@
         <div class = "quizBoxCard">
             <!--Quiz Header with Timer-->
             <div class = "qAndABoxHeader">
-                <div id = "quizTimer">
+                <div>
                     The Best Coding Quiz Ever
                 </div>
                 <div id = "quizTimer">
-                    Timer: 
+                    Timer: 300
                 </div>
             </div>
             <div class = "quizBoxQuestion">
-                <p>The Question</p>
+                <p>1. String values must be enclosed within _____ when being assigned to variables.</p>
             </div>
             <div class = "answerOne">
-                <button id = "answerOne" type = "input">Answer 1</button>
+                <button id = "answerOne" type = "input">Commas</button>
             </div>
             <div>
-                <button id = "answerTwo" type = "input">Answer 2</button>
+                <button id = "answerTwo" type = "input">Curly Brackets</button>
             </div>
             <div>
-                <button id = "answerThree" type = "input">Answer 3</button>
+                <button id = "answerThree" type = "input">Quotes</button>
             </div>
             <div>
-                <button id = "answerFour" type = "input">Answer 4</button>
+                <button id = "answerFour" type = "input">Parentheses</button>
             </div>
             <div class = "quizBoxFooter">
                 <button id = "quizBoxNextQuestion" type = "button"> Next Question </button>
             </div>
+        </div>
+    </div>
+    <!--Final Score and Enter Name Page-->
+    <div id = "finalScorePage">
+        <div style = "margin-left: 20px;">
+            <span style = "font-size: 30px; line-height: 55px;">Congrats! </span> <br> 
+            <p id = "finalScore"> Your Final Score is: </p>
+        </div>
+        <div class = "linebreak"></div>
+        <form id = "submissionForm">
+            Enter your full name: 
+            <input type = "text" id = "inputBox">
+            <input type = "submit" id = "submissionButton">
+        </form>
+    </div>
+    <div id = "highScoresPage">
+        <div id = "highScoreHeader">
+            HighScore Page
+        </div>
+        <div>
+            <ul id = "list">
+            </ul>
         </div>
     </div>
     <script src="./assets/js/script.js"></script>

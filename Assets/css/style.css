@@ -1,6 +1,6 @@
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    list-style: none;
+    
     margin: 0px;
     padding: 0px;
 }
@@ -137,9 +137,6 @@ body {
     justify-content: space-between;
 }
 
-#quizTimer {
-    padding-right: 100px;
-}
 
 .quizBoxQuestion {
     font-size: 23px;
@@ -227,4 +224,75 @@ body {
 #quizBoxNextQuestion:hover{
     background-color: #6CB4EE;
     opacity: 0.6;
+}
+
+#finalScorePage {
+    visibility: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    transform: translate(-50%, -50%);
+    background-color: #FFF5EE;
+    box-shadow: 0px 0px 0px 3px;
+}
+
+#submissionForm {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 20px;
+    font-size: 30px;
+    align-items: center;
+}
+
+#congratsText {
+    font-size: 30px;
+    margin: 40px;
+}
+
+#inputBox {
+    padding-right: 40px;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #F88158;
+}
+
+.linebreak {
+    height: 2px;
+    flex-basis: 100%;
+}
+
+#submissionButton {
+    padding: 12px;
+    padding-bottom: 7px;
+    margin-left: 10px;
+}
+
+#highScoresPage {
+    visibility: hidden;
+    height: 500px;
+    width: 450px;
+    background-color:  #F8F8FF;
+    box-shadow: 0px 0px 0px 2px black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#highScoreHeader {
+    font-size: 55px;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: solid black 5px;
+}
+
+#list {
+
 }

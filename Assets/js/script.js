@@ -30,14 +30,32 @@ var quizScore = 0;
 var totalTime = 300;
 var userInput;
 
-console.log(quizBox.style.visibility);
 
 highScoresButton.addEventListener("click", function (newEvent) {
     if (quizBox.style.visibility == "") {
+        console.log("hello");
         startButton.style.visibility = "hidden";
         quizRulesCard.style.visibility = "hidden";
         highScoresPage.style.visibility = "visible";
     }
+    
+    var storedArray = localStorage.getItem("submissionsArray");
+    var submissionsArray = JSON.parse(storedArray);
+    console.log(submissionsArray);
+    submissionsArray.sort(function (a,b) {
+        return a.score - b.score;
+    })
+
+    for (var i = 0; i < submissionsArray.length; i++) {
+        var listItem = document.createElement("li");
+        listItem.textContent = submissionsArray[i].name + " with a total score of: " + submissionsArray[i].score;
+
+        unorderedList.appendChild(listItem);
+    }
+
+
+    recordScorePage.style.visibility = "hidden";
+    highScoresPage.style.visibility = "visible";
 })
 
 clearHighScoresButton.addEventListener("click", function (thisEvent) {
